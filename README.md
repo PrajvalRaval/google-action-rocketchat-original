@@ -59,8 +59,36 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 
 ![dialogflow-deploy-fulfillment-00](https://user-images.githubusercontent.com/41849970/57801680-dd573300-7771-11e9-9b28-29b38c2e92a2.png)
 
-#### Dialogflow Console
-1. From the left navigation menu, click **Integrations** > **Integration Settings** under Google Assistant > Enable **Auto-preview changes** >  **Test** to open the Actions on Google simulator then say or type `Talk to my test app`.
+1. From the left navigation menu, click **Integrations** > **Integration Settings** under Google Assistant > Enable **Auto-preview changes** >  **Test** to open the Actions on Google simulator then say or type `Talk to my test app`. (If not already enabled)
+
+#### Enabling Billing
+
+#### Configuring Account Linking
+1. Login to your [Action Developer Console](https://console.actions.google.com/) and select Rocket Chat project on the list.
+
+1. Go to Settings ⚙ -> Project Setting and Copy **Project ID** and paste it somewere safe as we will need it later.
+1. Now click on **Advance Options** on Bottom left of the screen and select **Account Linking** from the list.
+1. In Account creation,
+   + Select `No, I only want to allow account creation on my website` 
+   + Click **Next**.
+1. In Linking type, Select **OAuth** from the list and Set **Authorisation code** as grant type. Click **Next**.
+1. Now we need to fill up the Authorization URI, Access Token URI, Client ID, Client Secret which we will generate on our rocket chat server.
+   + **Note** You need to be admin of the server to proceed with the further steps.
+1. In a new tab go to your **Server** -> **Three Dot Menu** -> **Administration**.
+1. Click on **OAuth Apps**.
+1. Click on **New Application** on top right. Now we need to give it an **Application Name** and a **Redirect URI**.
+1. For Application Name use "rcgoogleaction". This can be anything else as well.
+   + For the Redirect URI, copy `https://oauth-redirect.googleusercontent.com/r/YOUR_PROJECT_ID` and paste it in the Redirect URI field. **(Paste the Project Id we copied earlier here)**
+1. You'll see it automatically generating Client ID, Client Secret, Authorization URL, and Access Token URL. Now copy these from the oauth app page and paste it in the *Client ID, Client Secret, Authorization URL, and Access Token URL* fields in the Client information on Google Action Console Page. Click **Next**.
+1. Copy **Client ID** and paste it somewhere safe as we will be using it for setting up Firebase Environent Variables.
+1. In Configure your client (optional) section, 
+   + Tick mark(✔) **Google to transmit clientID and secret via HTTP basic auth header**
+   + Click **Next**.
+1. In Testing instructions,
+   + Provide an Email Id and Password as per instructions 
+   + Click on **Save**.
+1. We are done on setting our OAuth App which will give us the access token to use for logging in. But for that we need to also enable custom oauth login for our server which we will do in the next steps.
+1. Go to your **Server -> Three Dot Menu -> Administration**. Scroll down on your left and select **OAuth** and on top right click on **Add custom OAuth**.
 
 ### Running this Action
 + You can test your Action on any Google Assistant-enabled device on which the Assistant is signed into the same account used to create this project. Just say or type, “OK Google, talk to my test app”.
