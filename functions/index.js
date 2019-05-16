@@ -1,106 +1,132 @@
-
 'use strict';
 
 const {
-  dialogflow
+  dialogflow,
+  SignIn
 } = require('actions-on-google');
 const functions = require('firebase-functions');
-const app = dialogflow({debug: true});
+
 const helperFunctions = require('./helperFunctions');
+const envVariables = require('./config');
+const { CLIENT_ID } = envVariables;
+
+const app = dialogflow({debug: true, clientId: CLIENT_ID });
 
 
-app.intent('Default Welcome Intent', (conv) => {
-  conv.ask("Welcome To Rocket Chat Google Action. What would you like to do today? ");
+app.intent('Start Signin', (conv) => {
+
+  conv.ask(new SignIn('To get your account details'));
+
 });
 
+app.intent('Default Welcome Intent', (conv) => {
+
+    conv.ask("Welcome To Rocket Chat Google Action. What would you like to do today? ");
+
+});
 
 app.intent('Create Channel Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  const login = await helperFunctions.login();
-  const functiondata = await helperFunctions.createChannel(channelname);
+    var accessToken = conv.user.access.token;
+    var channelName = params.channelname;
+    
+    const headers = await helperFunctions.login(accessToken);
+    const speechText = await helperFunctions.createChannel(channelName,headers);
   
-  conv.ask(`Creating Channel ${functiondata.success}`);
+    conv.ask(`${speechText}`);
 
 });
 
 app.intent('Delete Channel Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  const login = await helperFunctions.login();
-  const functiondata = await helperFunctions.deleteChannel(channelname);
+    var accessToken = conv.user.access.token;
+    var channelName = params.channelname;
+
+    const headers = await helperFunctions.login(accessToken);
+    const speechText = await helperFunctions.deleteChannel(channelName,headers);
   
-  conv.ask(`Deleting Channel ${functiondata.success}`);
+    conv.ask(`${speechText}`);
+
 });
 
 app.intent('Post Message Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  var message = params.message;
-  const login = await helperFunctions.login();
-  const functiondata = await helperFunctions.postMessage(channelname, message);
-  
-  conv.ask(`Posting Message ${functiondata.success}`);
+    var accessToken = conv.user.access.token;
+    var channelName = params.channelname;
+    var message = params.message;
+
+    const headers = await helperFunctions.login(accessToken);
+    const speechText = await helperFunctions.postMessage(channelName,message,headers);
+
+    conv.ask(`${speechText}`);
+
 });
 
 app.intent('Channel Last Message Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  const login = await helperFunctions.login();
-  const functiondata = await helperFunctions.channelMessage(channelname);
-  
-  conv.ask(`${functiondata.messages[0].u.username} says, ${functiondata.messages[0].msg} `);
+  var accessToken = conv.user.access.token;
+  var channelName = params.channelname;
+
+  const headers = await helperFunctions.login(accessToken);
+  const speechText = await helperFunctions.channelLastMessage(channelName,headers);
+
+  conv.ask(`${speechText}`);
+
 });
 
 app.intent('Make Moderator Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  var username = params.username;
-  const login = await helperFunctions.login();
-  const userinfo = await helperFunctions.getUserInfo(username);
-  const userid = userinfo.user._id;
-  const roominfo = await helperFunctions.getRoomInfo(channelname);
-  const roomid = roominfo.channel._id;
-  const functiondata = await helperFunctions.makeModerator(userid,roomid);
+  var accessToken = conv.user.access.token;
+  var userName = params.username;
+  var channelName = params.channelname;
   
-  conv.ask(`Make Moderator ${functiondata.success}`);
+  const headers = await helperFunctions.login(accessToken);
+  const userid = await helperFunctions.getUserId(userName, headers);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.makeModerator(userName,channelName,headers,userid,roomid);
+
+  conv.ask(`${speechText}`);
+  
 });
 
 app.intent('Add Channel Owner Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  var username = params.username;
-  const login = await helperFunctions.login();
-  const userinfo = await helperFunctions.getUserInfo(username);
-  const userid = userinfo.user._id;
-  const roominfo = await helperFunctions.getRoomInfo(channelname);
-  const roomid = roominfo.channel._id;
-  const functiondata = await helperFunctions.addOwner(userid,roomid);
+  var accessToken = conv.user.access.token;
+  var userName = params.username;
+  var channelName = params.channelname;
+  
+  const headers = await helperFunctions.login(accessToken);
+  const userid = await helperFunctions.getUserId(userName, headers);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.addOwner(userName,channelName,userid,roomid,headers);
 
-  conv.ask(`Make Owner ${functiondata.success}`);
+  conv.ask(`${speechText}`);
 
 });
 
 app.intent('Add All To Channel Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  const login = await helperFunctions.login();
-  const roominfo = await helperFunctions.getRoomInfo(channelname);
-  const roomid = roominfo.channel._id;
-  const functiondata = await helperFunctions.addAll(roomid);
+  var accessToken = conv.user.access.token;
+  var channelName = params.channelname;
   
-  conv.ask(`Adding All ${functiondata.success}`);
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.addAll(channelName,roomid,headers);
+
+  conv.ask(`${speechText}`);
 });
 
 app.intent('Archive Channel Intent', async (conv, params) => {
 
-  var channelname = params.channelname;
-  const login = await helperFunctions.login();
-  const roominfo = await helperFunctions.getRoomInfo(channelname);
-  const roomid = roominfo.channel._id;
-  const functiondata = await helperFunctions.archiveChannel(roomid);
+  var accessToken = conv.user.access.token;
+  var channelName = params.channelname;
   
-  conv.ask(`Archive Channel ${functiondata.success}`);
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.archiveChannel(channelName,roomid,headers);
+
+  conv.ask(`${speechText}`);
+
 });
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
