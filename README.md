@@ -43,7 +43,7 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 
 + Then, change directory to *google-action-rocketchat*.
 
-      `cd google-action-rocketchat`
+     `cd google-action-rocketchat`
 
 5. Initialize Firebase
 
@@ -174,7 +174,7 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
   
   Then run,
   
-      `firebase deploy --only functions`
+     firebase deploy --only functions
   
 22. WE ARE DONE FINALLY !
 
