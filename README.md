@@ -1,4 +1,12 @@
-# Rocket Chat Google Action
+<p align="center">
+  <img  src="https://user-images.githubusercontent.com/41849970/57874125-831ba800-782d-11e9-93a9-26e82e9304f8.png">
+</p>
+
+<h3 align="center">
+  Revolutionising Communication Through Google Actions - Powered By Rocket Chat
+</h3>
+
+---
 
 ## Index
 * [Prerequisites](#prerequisites)
