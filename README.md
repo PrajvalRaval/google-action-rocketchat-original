@@ -174,7 +174,7 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
   
   Then run,
   
-      `firebase deploy --only functions`.
+      `firebase deploy --only functions`
   
 22. WE ARE DONE FINALLY !
 
