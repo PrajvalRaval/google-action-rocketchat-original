@@ -126,7 +126,11 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
   
 7. In a new tab go to your **Server** -> **Three Dot Menu** -> **Administration**.
 
+![Go to Server -> Administration](https://i.ibb.co/wgJnBxD/diagram1.jpg)
+
 8. Click on **OAuth Apps**.
+
+![Click on OAuth Apps](https://i.ibb.co/Wp2P42k/diagram2.jpg)
 
 9. Click on **New Application** on top right. Now we need to give it an **Application Name** and a **Redirect URI**.
 
@@ -153,6 +157,8 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
 15. We are done on setting our OAuth App which will give us the access token to use for logging in. But for that we need to also enable custom oauth login for our server which we will do in the next steps.
 
 16. Go to your **Server -> Three Dot Menu -> Administration**. Scroll down on your left and select **OAuth** and on top right click on **Add custom OAuth**.
+
+![Add custom OAuth](https://i.ibb.co/4jykrFx/diagram3.jpg)
 
 17. Give a unique name in lower case for the custom oauth. For example enter "googleaction". Click on **Send**. Copy and paste this name somewhere safe as we will be using it for setting up Firebase Environent Variables.
 
