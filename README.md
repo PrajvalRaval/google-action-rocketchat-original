@@ -1,5 +1,6 @@
 # Rocket Chat Google Action
 
+## Index
 * [Prerequisites](#prerequisites)
 * [Setting Up Console](#actions-console)
 * [Firebase Deployment](#firebase-deployment)
@@ -9,7 +10,7 @@
 * [References & Issues](#references--issues)
 
 
-### Billing Enabled Compulsory
+## Billing Enabled Compulsory
 **Required for running this action**
 This action uses Firebase Cloud Functions to make an HTTP request to a non-Google service. The free Firebase Spark Plan only allows outbound network calls to Google services. If you plan to run the sample, you will need to temporarily upgrade to a Firebase plan that allows for outbound networking, such as the [Blaze Plan](https://firebase.google.com/pricing/), also called Pay as you go.
 
