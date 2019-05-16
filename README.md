@@ -6,7 +6,7 @@
 * [Enabling Billing](#enabling-billing)
 * [Configuring Account Linking](#configuring-account-linking)
 * [Running this Action](#running-this-action)
-* [References & Issues](#references-&-issues)
+* [References & Issues](#references--issues)
 
 
 ### Billing Enabled Compulsory
