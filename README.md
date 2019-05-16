@@ -69,7 +69,7 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 1. Go to Settings ⚙ -> Project Setting and Copy **Project ID** and paste it somewere safe as we will need it later.
 1. Now click on **Advance Options** on Bottom left of the screen and select **Account Linking** from the list.
 1. In Account creation,
-   + Select `No, I only want to allow account creation on my website` 
+   + Select **No, I only want to allow account creation on my website** 
    + Click **Next**.
 1. In Linking type, Select **OAuth** from the list and Set **Authorisation code** as grant type. Click **Next**.
 1. Now we need to fill up the Authorization URI, Access Token URI, Client ID, Client Secret which we will generate on our rocket chat server.
@@ -79,7 +79,7 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 1. Click on **New Application** on top right. Now we need to give it an **Application Name** and a **Redirect URI**.
 1. For Application Name use "rcgoogleaction". This can be anything else as well.
    + For the Redirect URI, copy `https://oauth-redirect.googleusercontent.com/r/YOUR_PROJECT_ID` and paste it in the Redirect URI field. **(Paste the Project Id we copied earlier here)**
-1. You'll see it automatically generating Client ID, Client Secret, Authorization URL, and Access Token URL. Now copy these from the oauth app page and paste it in the *Client ID, Client Secret, Authorization URL, and Access Token URL* fields in the Client information on Google Action Console Page. Click **Next**.
+1. You'll see it automatically generating Client ID, Client Secret, Authorization URL, and Access Token URL. Now copy these from the oauth app page and paste it in the **Client ID, Client Secret, Authorization URL** and **Access Token URL** fields in the Client information on Google Action Console Page. Click **Next**.
 1. Copy **Client ID** and paste it somewhere safe as we will be using it for setting up Firebase Environent Variables.
 1. In Configure your client (optional) section, 
    + Tick mark(✔) **Google to transmit clientID and secret via HTTP basic auth header**
