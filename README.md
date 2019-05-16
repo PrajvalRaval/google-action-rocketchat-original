@@ -31,23 +31,23 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 
 2. Set up and initialize the Firebase CLI. If the following command fails with an EACCES error, you may need to [change npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions).
 
-  `npm install -g firebase-tools` 
+      `npm install -g firebase-tools` 
 
 3. Authenticate the firebase tool with your Google account:
 
-  `firebase login`
+      `firebase login`
 
 4. Clone repository to your local machine.
 
-  `git clone https://github.com/PrajvalRaval/google-action-rocketchat.git`
+      `git clone https://github.com/PrajvalRaval/google-action-rocketchat.git`
 
 + Then, change directory to *google-action-rocketchat*.
 
-  `cd google-action-rocketchat`
+      `cd google-action-rocketchat`
 
 5. Initialize Firebase
 
-  `firebase init`
+      `firebase init`
 
 6. You'll be asked to select which Firebase CLI features you want to setup for your Actions project. Choose Functions then press Enter to confirm and continue.
 
@@ -73,15 +73,15 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 
 13. Install the **actions-on-google** dependency by using following commands,
 
-  `cd functions`
+      `cd functions`
 
-  `npm install actions-on-google`
+      `npm install actions-on-google`
 
 14. Get the fulfillment dependencies and deploy the fulfillment function:
 
-  `npm install`
+      `npm install`
 
-  `firebase deploy --only functions`
+      `firebase deploy --only functions`
 
 15. The deployment takes a few minutes. Once completed, you'll see output similar to the following. You'll need the **Function URL** to enter in Dialogflow.
 
@@ -168,11 +168,11 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
 
 21. Go to your console and run,
 
-   `firebase functions:config:set envariables.server_url="https://YOUR.SERVER.chat" envariables.oauth_service_name="YOUR_CUSTOM_OAUTH_NAME" envariables.clientid="YOUR_CLIENT_ID"`
+      `firebase functions:config:set envariables.server_url="https://YOUR.SERVER.chat" envariables.oauth_service_name="YOUR_CUSTOM_OAUTH_NAME" envariables.clientid="YOUR_CLIENT_ID"`
   
   Then run,
   
-  `firebase deploy --only functions`.
+      `firebase deploy --only functions`.
   
 22. WE ARE DONE FINALLY !
 
