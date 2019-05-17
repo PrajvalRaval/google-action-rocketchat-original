@@ -180,7 +180,7 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
 
 20. Click on **Save Changes** on top.
 
-21. Go to your console and run,
+21. Go to your console add your **Server URL,OAuth Service Name** and **Client ID** to the following command and run,
 
       ```
       firebase functions:config:set envariables.server_url="https://YOUR.SERVER.chat" envariables.oauth_service_name="YOUR_CUSTOM_OAUTH_NAME" envariables.clientid="YOUR_CLIENT_ID"
