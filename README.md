@@ -197,8 +197,8 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
 + You can also use the Actions on Google Console simulator to test most features and preview on-device behavior.
 
 ## References & Issues
-+ Rocket Chat API Documentation [REST API DOCUMENTATION](https://rocket.chat/docs/developer-guides/rest-api/)
-+ Axios Documentation [Github Page](https://github.com/axios/axios)
++ Rocket Chat API [Documentation](https://rocket.chat/docs/developer-guides/rest-api/)
++ Axios [Documentation](https://github.com/axios/axios)
 + Questions? Go to [StackOverflow](https://stackoverflow.com/questions/tagged/actions-on-google), [Assistant Developer Community on Reddit](https://www.reddit.com/r/GoogleAssistantDev/) or [Support](https://developers.google.com/actions/support/).
 + For bugs, please report an issue on Github.
 + Actions on Google [Documentation](https://developers.google.com/actions/extending-the-assistant)
