@@ -16,7 +16,7 @@ const i18n = require('i18n');
 const moment = require('moment');
 
 i18n.configure({
-  locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN'],
+  locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN', 'pt-BR'],
   directory: __dirname + '/locales',
   defaultLocale: 'en-US',
   objectNotation : true
@@ -29,7 +29,7 @@ app.middleware((conv) => {
 
 app.intent('Default Welcome Intent', (conv) => {
 
-    conv.ask("Welcome To Rocket Chat Google Action. What would you like to do today? ");
+    conv.ask(i18n.__('WELCOME.SUCCESS'));
 
 });
 
