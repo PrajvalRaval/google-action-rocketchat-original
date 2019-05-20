@@ -216,7 +216,7 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
     + REST API endpoint URLs.
 
 5.  `./functions/locales/*.json`
-    + Change the the sample phrases for each intent. Repeat the customisation porcess operation for each locale you are planning to support.
+    + Contains responses for different locales. If you are planning to contribute to your locale you will need to change response strings here.
     
 #### i18n
 By default we support development for `EN`,`PT` and `HI` locales and are included in our Dialogflow agent. But we do have developed a base locale resource file for every supported Google Action locale, for developers worldwide to develop this action in their own language. If you are interested in contributing to your locale please follow this steps.
