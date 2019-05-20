@@ -10,10 +10,14 @@
 
 ## Index
 * [Prerequisites](#prerequisites)
-* [Setting Up Console](#actions-console)
-* [Firebase Deployment](#firebase-deployment)
-* [Enabling Billing](#enabling-billing)
-* [Configuring Account Linking](#configuring-account-linking)
+* [Configuration](#configuration)
+    * [Setting Up Console](#actions-console)
+    * [Firebase Deployment](#firebase-deployment)
+    * [Enabling Billing](#enabling-billing)
+    * [Configuring Account Linking](#configuring-account-linking)
+* [Development](#development)
+    * [Files](#files)
+    * [i18n](#i18n)
 * [Running this Action](#running-this-action)
 * [References & Issues](#references--issues)
 
@@ -192,13 +196,62 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
   
 22. WE ARE DONE FINALLY !
 
-### Running this Action
+## Running this Action
 + You can test your Action on any Google Assistant-enabled device on which the Assistant is signed into the same account used to create this project. Just say or type, “OK Google, talk to my test app”.
 + You can also use the Actions on Google Console simulator to test most features and preview on-device behavior.
+
+## Development
+
+#### Files
+1.  `./functions/index.js`
+    + Add new handlers for intents, modify intent logic to customize the skill.
+    
+2.  `./functions/helperFunctions.js`
+    + Enhance the functionality of the source code by adding functions that are required for sending requests and various other logics.
+    
+3.  `./functions/config.js`
+    + Imports Firebase config into our code.
+    
+4.  `./functions/apiEndpoints.js`
+    + REST API endpoint URLs.
+
+5.  `./functions/locales/*.json`
+    + Change the the sample phrases for each intent. Repeat the customisation porcess operation for each locale you are planning to support.
+    
+#### i18n
+By default we support development for `EN`,`PT` and `HI` locales and are included in our Dialogflow agent. But we do have developed a base locale resource file for every supported Google Action locale, for developers worldwide to develop this action in their own language. If you are interested in contributing to your locale please follow this steps.
+
+1.  Go to your [Dialogflow Console](https://console.dialogflow.com)
+
+2.  In Dialogflow console click on `+` (Below **Settings** ⚙ Sign) > **Select Additional Language** > **Your Locale** after that click on **SAVE**
+
+3.  Now click on <img width="47" alt="Screenshot 2019-05-20 at 8 02 57 PM" src="https://user-images.githubusercontent.com/41849970/58029492-58d22f00-7b3a-11e9-907c-15ec033b0097.png"> and select **Your Locale** from the list.
+
+4.  You will need to add **Training phrases** one by one to every intent. Select **Intents** > select one intent from the list > **Training phrases**. Add a user expression that include every **Action and parameters** in the utterance and is native speaker friendly.
+
+5. After adding Training Phrases, go to **Entities** . Here you can simply copy and paste slot values from English locale for the following entities `channelname`, `username`.
+
+6. For `message` you need to add your own slot values in your own language. Make sure to add atleast 15 of them in various different lengths. 
+
+7. For Backend setup, go to `./functions/index.js` and add your locale name to `i18n.configure` > `locales` array.
+    ```
+    i18n.configure({
+    locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN', 'pt-BR', 'hi-IN'],
+    directory: __dirname + '/locales',
+    defaultLocale: 'en-US',
+    objectNotation : true
+    });
+    ```
+    **NOTE:** It is same name as in locales folder.
+    
+ 8. Locale File: `./functions/locales/*.json` ,It is highly likely that your locale may be behind with some new function additions to locales files so we highly suggest to make sure that every object locale is up-to-date with our English locale file. If not make sure to add those JSON blocks to your locale before deployment. We have developed those base locales using a translation software and translations of response may not be always accurate so feel free to update those response strings correctly as per your native language.
+ 
+ For more details on please check out [Fulfillment Localization](https://developers.google.com/actions/localization/fulfillment) and [I18n-node](https://github.com/mashpie/i18n-node)
 
 ## References & Issues
 + Rocket Chat API [Documentation](https://rocket.chat/docs/developer-guides/rest-api/)
 + Axios [Documentation](https://github.com/axios/axios)
++ i18n [Documentation](https://developers.google.com/actions/localization/fulfillment)
 + Questions? Go to [StackOverflow](https://stackoverflow.com/questions/tagged/actions-on-google), [Assistant Developer Community on Reddit](https://www.reddit.com/r/GoogleAssistantDev/) or [Support](https://developers.google.com/actions/support/).
 + For bugs, please report an issue on Github.
 + Actions on Google [Documentation](https://developers.google.com/actions/extending-the-assistant)
