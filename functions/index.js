@@ -16,7 +16,7 @@ const i18n = require('i18n');
 const moment = require('moment');
 
 i18n.configure({
-  locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN', 'pt-BR'],
+  locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN', 'pt-BR', 'hi-IN'],
   directory: __dirname + '/locales',
   defaultLocale: 'en-US',
   objectNotation : true
