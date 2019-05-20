@@ -244,7 +244,9 @@ By default we support development for `EN`,`PT` and `HI` locales and are include
     ```
     **NOTE:** It is same name as in locales folder.
     
- 8. Locale File: `./functions/locales/*.json` ,It is highly likely that your locale may be behind with some new function additions to locales files so we highly suggest to make sure that every object locale is up-to-date with our English locale file. If not make sure to add those JSON blocks to your locale before deployment. We have developed those base locales using a translation software and translations of response may not be always accurate so feel free to update those response strings correctly as per your native language.
+ 8. Locale File: `./functions/locales/*.json` ,It is highly likely that your locale may be behind because of new function additions, so we highly suggest to make sure that every object in your locale is up-to-date with our English locale file. If not make sure to add those JSON blocks to your locale before deployment. To do that simply copy and paste missing blocks from **English** locale file and simply translate the response strings into your own language.
+ 
+We have developed those base locales using a translation software and translations of response may not be always accurate so feel free to update those response strings correctly as per your native language.
  
  For more details on i18n please check out [Fulfillment Localization](https://developers.google.com/actions/localization/fulfillment) and [I18n-node](https://github.com/mashpie/i18n-node)
 
