@@ -4,14 +4,14 @@
         "v2": "Sorry, I didn't get that. Could you say it again?."
     },
     "HELP": {
-        "MESSAGE": "This is the Alexa Skill for rocket chat. Refer sample utterances file on GitHub."
+        "MESSAGE": "This is the Google Action for rocket chat. Refer sample utterances file on GitHub."
     },
     "GOODBYE": {
         "MESSAGE": "Thanks for using Rocket Chat."
     },
     "WELCOME": {
-        "SUCCESS": "Welcome To Rocket Chat Alexa Skill. What Would you like to do today?",
-        "ERROR": "To start using this skill, please use the companion app to authenticate."
+        "SUCCESS": "Welcome To Rocket Chat Google Action. What Would you like to do today?",
+        "ERROR": "To start using this action, please link your account to authenticate."
     },
     "POST_MESSAGE": {
         "SUCCESS": "I've sent your message.",
