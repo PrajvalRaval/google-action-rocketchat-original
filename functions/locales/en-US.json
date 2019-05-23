@@ -52,5 +52,11 @@
         "SUCCESS": "%s is now archived.",
         "ERROR": "Sorry, I couldn't archive this channel right now.",
         "ERROR_NOT_FOUND": "Sorry, I couldn't archive channel %s right now."
+    },
+    "GET_UNREAD_MESSAGES_FROM_CHANNEL":{
+        "NO_MESSAGE" : "You have no unread messages.",
+        "MESSAGE" : "<speak> You Have %s Unread Messages <break time=\"1\" /> <p> %s </p> </speak>",
+        "ERROR": "Sorry, I couldn't get your unread messages right now.",
+        "ERROR_NOT_FOUND": "Sorry, the channel %s does not exist. Please try again with different channel name."
     }
   }
