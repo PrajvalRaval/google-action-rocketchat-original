@@ -1,3 +1,16 @@
+# Index
+* [Channel Utterances](#channel)
+    * [Create A New Channel](#create-a-new-channel)
+    * [Delete A Channel](#delete-a-channel)
+    * [Add All Users To A Channel](#add-all-users-on-server-to-a-channel)
+    * [Make Channel Moderator](#make-an-user-channel-moderator)
+    * [Make Channel Owner](#make-an-user-channel-owner)
+    * [Archive A Channel](#archive-a-channel)
+* [Chat Utterances](#chat)
+    * [Post A Message](#post-a-message)
+    * [Read Last Message From A Channel](#read-last-message-from-a-channel)
+    * [Read Unread Messages From A Channel](#read-unread-messages-from-a-channel)
+
 # Channel
 
 ### Create A New Channel
