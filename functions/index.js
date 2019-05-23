@@ -152,7 +152,19 @@ app.intent('Archive Channel Intent', async (conv, params) => {
 
 });
 
+app.intent('Unread Messages Intent', async (conv, params) => {
 
+  var accessToken = conv.user.access.token;
+  var channelNameData = params.channelname;
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  
+  const headers = await helperFunctions.login(accessToken);
+  const unreadCount = await helperFunctions.getUnreadCounter(channelName, headers);
+  const speechText = await helperFunctions.channelUnreadMessages(channelName, unreadCount, headers);
+
+  conv.ask(speechText);
+
+});
 
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
