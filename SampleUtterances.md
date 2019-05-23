@@ -147,7 +147,7 @@ Ok Google, Mandar MESSAGE Para O CHANNELNAME
 English
 
 ```
-Ok Google, Read CHANNELNAME last message
+Ok Google, Read Last Message From CHANNELNAME
 ```
 
 Hindi
@@ -160,6 +160,26 @@ Portuguese
 
 ```
 Ok Google, Leia A última Mensagem Do CHANNELNAME
+```
+
+### Read Unread Messages From A Channel
+
+English
+
+```
+Ok Google, Read Unread Messages From CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, CHANNELNAME के अपठित संदेश पढ़ें
+```
+
+Portuguese
+
+```
+Ok Google, Leia Minhas Mensagens Não Lidas De CHANNELNAME
 ```
 
 # IM
