@@ -11,6 +11,8 @@
     * [Read Last Message From A Channel](#read-last-message-from-a-channel)
     * [Read Unread Messages From A Channel](#read-unread-messages-from-a-channel)
 
+***
+
 # Channel
 
 ### Create A New Channel
@@ -132,6 +134,7 @@ Portuguese
 ```
 Ok Google, Arquivar CHANNELNAME
 ```
+***
 
 # Chat
 
@@ -194,7 +197,10 @@ Portuguese
 ```
 Ok Google, Leia Minhas Mensagens Não Lidas De CHANNELNAME
 ```
+***
 
 # IM
+
+***
 
 # User
