@@ -227,7 +227,7 @@ By default we support development for `EN`,`PT` and `HI` locales and are include
 
 3.  Now click on <img width="47" alt="Screenshot 2019-05-20 at 8 02 57 PM" src="https://user-images.githubusercontent.com/41849970/58029492-58d22f00-7b3a-11e9-907c-15ec033b0097.png"> and select **Your Locale** from the list.
 
-4.  You will need to add **Training phrases** one by one to every intent. Select **Intents** > select one intent from the list > **Training phrases**. Add a user expression that include every **Action and parameters** in the utterance and is native speaker friendly.
+4.  You will need to add **Training phrases** one by one to every intent. Select **Intents** > select one intent from the list > **Training phrases**. Add some training phrases that include every **Parameter** required as headers data to send a `POST` request to the server, in the utterance and make sure it is native speaker friendly.
 
 5. While creating Training Phrases, make sure that you give composite entities parameters to the utterances. E.g. If your creating an utterance with `username` and `channelname`, select `@sys.any` as their entity type. Refer to `EN` locale training phrases for more depth understanding.
 
