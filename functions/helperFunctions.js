@@ -148,26 +148,26 @@ const getRoomId = async (channelName, headers) =>
 		});
 
 const makeModerator = async (userName, channelName, userid, roomid, headers) =>
-	await axios
-		.post(
-			apiEndpoints.makemoderatorurl,
-			{
-				userId: userid,
-				roomId: roomid,
-			},
-			{ headers }
-		)
-		.then((res) => res.data)
-		.then((res) => {
-			if (res.success === true) {
-				return i18n.__('MAKE_MODERATOR.SUCCESS',userName,channelName);
-			} else {
-				return i18n.__('MAKE_MODERATOR.ERROR');
-			}
-		})
-		.catch((err) => {
-			console.log(err.message);
-			return i18n.__('MAKE_MODERATOR.ERROR_NOT_FOUND',channelName);
+		await axios
+			.post(
+				apiEndpoints.makemoderatorurl,
+				{
+					userId: userid,
+					roomId: roomid,
+				},
+				{ headers }
+			)
+			.then((res) => res.data)
+			.then((res) => {
+				if (res.success === true) {
+					return i18n.__('MAKE_MODERATOR.SUCCESS',userName, channelName);
+				} else {
+					return i18n.__('MAKE_MODERATOR.ERROR');
+				}
+			})
+			.catch((err) => {
+				console.log(err.message);
+				return i18n.__('MAKE_MODERATOR.ERROR_NOT_FOUND',channelName);
 		});
 
 const addAll = async (channelName, roomid, headers) =>

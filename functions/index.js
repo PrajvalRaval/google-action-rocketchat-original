@@ -41,7 +41,8 @@ app.intent('Default Welcome Intent', (conv) => {
 app.intent('Create Channel Intent', async (conv, params) => {
 
     var accessToken = conv.user.access.token;
-    var channelNameData = params.channelname;
+    var channelNameRaw = params.channelname;
+    var channelNameData = channelNameRaw.toLowerCase();
     var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
     
     const headers = await helperFunctions.login(accessToken);
@@ -54,7 +55,8 @@ app.intent('Create Channel Intent', async (conv, params) => {
 app.intent('Delete Channel Intent', async (conv, params) => {
 
     var accessToken = conv.user.access.token;
-    var channelNameData = params.channelname;
+    var channelNameRaw = params.channelname;
+    var channelNameData = channelNameRaw.toLowerCase();
     var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
 
     const headers = await helperFunctions.login(accessToken);
@@ -68,7 +70,8 @@ app.intent('Post Message Intent', async (conv, params) => {
 
     var accessToken = conv.user.access.token;
     var message = params.message;
-    var channelNameData = params.channelname;
+    var channelNameRaw = params.channelname;
+    var channelNameData = channelNameRaw.toLowerCase();
     var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
 
     const headers = await helperFunctions.login(accessToken);
@@ -81,7 +84,8 @@ app.intent('Post Message Intent', async (conv, params) => {
 app.intent('Channel Last Message Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
 
   const headers = await helperFunctions.login(accessToken);
@@ -94,15 +98,17 @@ app.intent('Channel Last Message Intent', async (conv, params) => {
 app.intent('Make Moderator Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var userNameData = params.username;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
   var userName = helperFunctions.replaceWhitespacesDots(userNameData);
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
   
   const headers = await helperFunctions.login(accessToken);
   const userid = await helperFunctions.getUserId(userName, headers);
   const roomid = await helperFunctions.getRoomId(channelName, headers);
-  const speechText = await helperFunctions.makeModerator(userName,channelName,headers,userid,roomid);
+  const speechText = await helperFunctions.makeModerator(userName,channelName,userid,roomid,headers);
 
   conv.ask(speechText);
   
@@ -111,9 +117,11 @@ app.intent('Make Moderator Intent', async (conv, params) => {
 app.intent('Add Channel Owner Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var userNameData = params.username;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
   var userName = helperFunctions.replaceWhitespacesDots(userNameData);
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
   
   const headers = await helperFunctions.login(accessToken);
@@ -128,7 +136,8 @@ app.intent('Add Channel Owner Intent', async (conv, params) => {
 app.intent('Add All To Channel Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
   
   const headers = await helperFunctions.login(accessToken);
@@ -141,7 +150,8 @@ app.intent('Add All To Channel Intent', async (conv, params) => {
 app.intent('Archive Channel Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
   
   const headers = await helperFunctions.login(accessToken);
@@ -155,7 +165,8 @@ app.intent('Archive Channel Intent', async (conv, params) => {
 app.intent('Unread Messages Intent', async (conv, params) => {
 
   var accessToken = conv.user.access.token;
-  var channelNameData = params.channelname;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
   var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
   
   const headers = await helperFunctions.login(accessToken);
@@ -165,6 +176,26 @@ app.intent('Unread Messages Intent', async (conv, params) => {
   conv.ask(speechText);
 
 });
+
+app.intent('Post Emoji Message Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var messageData = params.message;
+  const emojiData = params.emoji;
+  const emoji = helperFunctions.emojiTranslateFunc(emojiData);
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  const message = messageData + emoji;
+
+
+  const headers = await helperFunctions.login(accessToken);
+  const speechText = await helperFunctions.postMessage(channelName,message,headers);
+
+  conv.ask(speechText);
+
+});
+
 
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
