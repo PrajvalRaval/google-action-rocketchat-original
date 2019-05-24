@@ -229,11 +229,9 @@ By default we support development for `EN`,`PT` and `HI` locales and are include
 
 4.  You will need to add **Training phrases** one by one to every intent. Select **Intents** > select one intent from the list > **Training phrases**. Add a user expression that include every **Action and parameters** in the utterance and is native speaker friendly.
 
-5. After adding Training Phrases, go to **Entities** . Here you can simply copy and paste slot values from English locale for the following entities `channelname`, `username`.
+5. While creating Training Phrases, make sure that you give composite entities parameters to the utterances. E.g. If your creating an utterance with `username` and `channelname`, select `@sys.any` as their entity type. Refer to `EN` locale training phrases for more depth understanding.
 
-6. For `message` you need to add your own slot values in your own language. Make sure to add atleast 15 of them in various different lengths. 
-
-7. For Backend setup, go to `./functions/index.js` and add your locale name to `i18n.configure` > `locales` array.
+6. For Backend setup, go to `./functions/index.js` and add your locale name to `i18n.configure` > `locales` array.
     ```
     i18n.configure({
     locales: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-IN', 'pt-BR', 'hi-IN'],
@@ -244,7 +242,7 @@ By default we support development for `EN`,`PT` and `HI` locales and are include
     ```
     **NOTE:** It is same name as in locales folder.
     
- 8. Locale File: `./functions/locales/*.json` ,It is highly likely that your locale may be behind because of new function additions, so we highly suggest to make sure that every object in your locale is up-to-date with our English locale file. If not make sure to add those JSON blocks to your locale before deployment. To do that simply copy and paste missing blocks from **English** locale file and simply translate the response strings into your own language.
+7. Locale File: `./functions/locales/*.json` ,It is highly likely that your locale may be behind because of new function additions, so we highly suggest to make sure that every object in your locale is up-to-date with our English locale file. If not make sure to add those JSON blocks to your locale before deployment. To do that simply copy and paste missing blocks from **English** locale file and simply translate the response strings into your own language.
  
 We have developed those base locales using a translation software and translations of response may not be always accurate so feel free to update those response strings correctly as per your native language.
  
