@@ -170,7 +170,7 @@ Ok Google, Send MESSAGE Emoji EMOJINAME to CHANNELNAME
 Hindi
 
 ```
-Ok Google, CHANNELNAME में MESSAGE Emoji EMOJINAME भेजें
+Ok Google, CHANNELNAME में MESSAGE इमोजी EMOJINAME भेजें
 ```
 
 Portuguese
