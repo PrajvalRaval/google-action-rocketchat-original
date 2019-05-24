@@ -8,6 +8,7 @@
     * [Archive A Channel](#archive-a-channel)
 * [Chat Utterances](#chat)
     * [Post A Message](#post-a-message)
+    * [Post Emoji Message](#post-emoji-message)
     * [Read Last Message From A Channel](#read-last-message-from-a-channel)
     * [Read Unread Messages From A Channel](#read-unread-messages-from-a-channel)
 
@@ -156,6 +157,26 @@ Portuguese
 
 ```
 Ok Google, Mandar MESSAGE Para O CHANNELNAME
+```
+
+### Post Emoji Message
+
+English
+
+```
+Ok Google, Send MESSAGE Emoji EMOJINAME to CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, CHANNELNAME में MESSAGE Emoji EMOJINAME भेजें
+```
+
+Portuguese
+
+```
+Ok Google, Enviar MESSAGE Emoji EMOJINAME Para CHANNELNAME
 ```
 
 ### Read Last Message From A Channel
