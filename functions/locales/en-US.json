@@ -58,5 +58,29 @@
         "MESSAGE" : "<speak> You Have %s Unread Messages <break time=\"1\" /> <p> %s </p> </speak>",
         "ERROR": "Sorry, I couldn't get your unread messages right now.",
         "ERROR_NOT_FOUND": "Sorry, the channel %s does not exist. Please try again with different channel name."
+    },
+    "INVITE_USER_TO_CHANNEL":{
+        "SUCCESS": "%s is invited to the channel %s ",
+        "ERROR": "Sorry I couldn't invite user %s to channel %s right now",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't find channel %s right now"
+    },
+    "LEAVE_CHANNEl":{
+        "SUCCESS": "You Left channel %s .",
+        "ERROR": "Sorry, You couldn't leave the channel %s right now. Maybe you are the only owner of Channel so first set someone as the channel owner"
+    },
+    "KICK_USER_FROM_CHANNEL":{
+        "SUCCESS": "%s is now kicked from channel %s ",
+        "ERROR": "Sorry I couldn't kick user %s from channel %s right now",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't find channel %s right now"
+    },
+    "ADD_LEADER": {
+        "SUCCESS": "%s is now the leader of %s.",
+        "ERROR": "Sorry, I couldn't assign a leader to the channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't assign a leader to channel %s right now."
+    },
+    "RENAME_ROOM": {
+        "SUCCESS": "%s is now renamed to %s.",
+        "ERROR": "Sorry, I couldn't rename this channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't rename channel %s right now."
     }
   }
