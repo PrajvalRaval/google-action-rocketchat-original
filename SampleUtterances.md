@@ -6,6 +6,11 @@
     * [Make Channel Moderator](#make-an-user-channel-moderator)
     * [Make Channel Owner](#make-an-user-channel-owner)
     * [Archive A Channel](#archive-a-channel)
+    * [Invite User To A Channel](#invite-user-to-a-channel)
+    * [Leave A Channel](#leave-a-channel)
+    * [Kick User From A Channel](#kick-user-from-a-channel)
+    * [Make Channel Leader](#make-channel-leader)
+    * [Rename Channel](#rename-channel)
 * [Chat Utterances](#chat)
     * [Post A Message](#post-a-message)
     * [Post Emoji Message](#post-emoji-message)
@@ -134,6 +139,106 @@ Portuguese
 
 ```
 Ok Google, Arquivar CHANNELNAME
+```
+
+### Invite User To A Channel
+
+English
+
+```
+Ok Google, Invite USERNAME To CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME में आमंत्रित करें
+```
+
+Portuguese
+
+```
+Ok Google, Convidar USERNAME Para CHANNELNAME
+```
+
+### Leave A Channel
+
+English
+
+```
+Ok Google, Leave CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, CHANNELNAME को छोड़ दें
+```
+
+Portuguese
+
+```
+Ok Google, Sair De CHANNELNAME
+```
+
+### Kick User From A Channel
+
+English
+
+```
+Ok Google, Kick USERNAME From CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME से निकालें
+```
+
+Portuguese
+
+```
+Ok Google, Chute USERNAME De CHANNELNAME
+```
+
+### Make Channel Leader
+
+English
+
+```
+Ok Google, Make USERNAME Leader Of CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME का नेता बनाएं
+```
+
+Portuguese
+
+```
+Ok Google, Tornar O Líder De USERNAME De CHANNELNAME
+```
+
+### Rename Channel
+
+English
+
+```
+Ok Google, Rename CHANNELNAME To NEWNAME
+```
+
+Hindi
+
+```
+Ok Google, CHANNEL का नाम बदलकर NEWNAME करें
+```
+
+Portuguese
+
+```
+Ok Google, Renomear CHANNELNAME Para NEWNAME
 ```
 ***
 
