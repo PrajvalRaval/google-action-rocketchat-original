@@ -21,4 +21,9 @@ module.exports = {
 	addownerurl: `${ SERVER_URL }/api/v1/channels.addOwner`,
 	archivechannelurl: `${ SERVER_URL }/api/v1/channels.archive`,
 	counterurl: `${ SERVER_URL }/api/v1/channels.counters?roomName=`,
+	inviteuserurl: `${ SERVER_URL }/api/v1/channels.invite`,
+	leavechannelurl: `${ SERVER_URL }/api/v1/channels.leave`,
+	kickuserurl : `${ SERVER_URL }/api/v1/channels.kick`,
+	addleaderurl : `${ SERVER_URL }/api/v1/channels.addLeader`,
+	channelrenameurl : `${ SERVER_URL }/api/v1/channels.rename`,
 };

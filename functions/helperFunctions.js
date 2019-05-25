@@ -299,6 +299,132 @@ const channelUnreadMessages = async (channelName, unreadCount, headers) =>
 			}
 		});
 
+const inviteUser = async (userName, channelName, userid, roomid, headers) =>
+		await axios
+			.post(
+				apiEndpoints.inviteuserurl,
+				{
+					userId: userid,
+					roomId: roomid,
+				},
+				{ headers }
+			)
+			.then((res) => res.data)
+			.then((res) => {
+				if (res.success === true) {
+					return i18n.__('INVITE_USER_TO_CHANNEL.SUCCESS',userName, channelName);
+				} else {
+					return i18n.__('INVITE_USER_TO_CHANNEL.ERROR',userName, channelName);
+				}
+			})
+			.catch((err) => {
+				console.log(err.message);
+				console.log(err.message);
+			console.log(err.message);
+			if (err.response.data.errorType === 'error-room-not-found') {
+				return i18n.__('INVITE_USER_TO_CHANNEL.ERROR_NOT_FOUND', channelName);
+			} else {
+				return i18n.__('INVITE_USER_TO_CHANNEL.ERROR',userName, channelName);
+			}
+		});
+
+
+const leaveChannel = async (channelName, roomid, headers) =>
+		await axios
+			.post(
+				apiEndpoints.leavechannelurl,
+				{
+					roomId: roomid,
+				},
+				{ headers }
+			)
+			.then((res) => res.data)
+			.then((res) => {
+				if (res.success === true) {
+					return i18n.__('LEAVE_CHANNEl.SUCCESS',channelName);
+				} else {
+					return i18n.__('LEAVE_CHANNEl.ERROR', channelName);
+				}
+			})
+			.catch((err) => {
+				console.log(err.message);
+				return i18n.__('LEAVE_CHANNEl.ERROR',channelName);
+	});
+
+const kickUser = async (userName, channelName, userid, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.kickuserurl,
+			{
+				userId: userid,
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('KICK_USER_FROM_CHANNEL.SUCCESS',userName, channelName);
+			} else {
+				return i18n.__('KICK_USER_FROM_CHANNEL.ERROR',userName, channelName);
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			console.log(err.message);
+		console.log(err.message);
+		if (err.response.data.errorType === 'error-room-not-found') {
+			return i18n.__('KICK_USER_FROM_CHANNEL.ERROR_NOT_FOUND', channelName);
+		} else {
+			return i18n.__('KICK_USER_FROM_CHANNEL.ERROR',userName, channelName);
+		}
+	});
+
+const addLeader = async (userName, channelName, userid, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.addleaderurl,
+			{
+				userId: userid,
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('ADD_LEADER.SUCCESS',userName, channelName);
+			} else {
+				return i18n.__('ADD_LEADER.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('ADD_LEADER.ERROR_NOT_FOUND',channelName);
+	});
+
+const channelRename = async (channelName, roomid, newName, headers) =>
+	await axios
+		.post(
+			apiEndpoints.channelrenameurl,
+			{
+				roomId: roomid,
+				name: newName,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('RENAME_ROOM.SUCCESS', channelName, newName);
+			} else {
+				return i18n.__('RENAME_ROOM.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('RENAME_ROOM.ERROR_NOT_FOUND',channelName);
+	});
 
 
 // Module Export of Functions
@@ -319,3 +445,8 @@ module.exports.replaceWhitespacesDots = replaceWhitespacesDots;
 module.exports.emojiTranslateFunc = emojiTranslateFunc;
 module.exports.getUnreadCounter = getUnreadCounter;
 module.exports.channelUnreadMessages = channelUnreadMessages;
+module.exports.inviteUser = inviteUser;
+module.exports.leaveChannel = leaveChannel;
+module.exports.kickUser = kickUser;
+module.exports.addLeader = addLeader;
+module.exports.channelRename = channelRename;
