@@ -21,10 +21,13 @@
 * [Running this Action](#running-this-action)
 * [References & Issues](#references--issues)
 
+---
 
 ## Billing Enabled Compulsory
 **Required for running this action**
 This action uses Firebase Cloud Functions to make an HTTP request to a non-Google service. The free Firebase Spark Plan only allows outbound network calls to Google services. If you plan to run the sample, you will need to temporarily upgrade to a Firebase plan that allows for outbound networking, such as the [Blaze Plan](https://firebase.google.com/pricing/), also called Pay as you go.
+
+---
 
 ## Setup Instructions
 ### Prerequisites
@@ -32,7 +35,10 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 1. Firebase CLI
 1. Rocket Chat Server updated to Release 1.0.0-rc3 or later
 
+---
+
 ### Configuration
+
 #### Actions Console
 1. From the [Actions on Google Console](https://console.actions.google.com/), add a new project > **Create Project** > under **More options** > **Conversational**
 1. From the left navigation menu under **Build** > **Actions** > **Add Your First Action** > **BUILD** (this will bring you to the Dialogflow console) > Select language and time zone > **CREATE**.
@@ -196,9 +202,13 @@ Function URL (factsAboutGoogle): https://us-central1-myprojectname-ab123.cloudfu
   
 22. WE ARE DONE FINALLY !
 
+---
+
 ## Running this Action
 + You can test your Action on any Google Assistant-enabled device on which the Assistant is signed into the same account used to create this project. Just say or type, “OK Google, talk to my test app”.
 + You can also use the Actions on Google Console simulator to test most features and preview on-device behavior.
+
+---
 
 ## Development
 
@@ -247,6 +257,8 @@ By default we support development for `EN`,`PT` and `HI` locales and are include
 We have developed those base locales using a translation software and translations of response may not be always accurate so feel free to update those response strings correctly as per your native language.
  
  For more details on i18n please check out [Fulfillment Localization](https://developers.google.com/actions/localization/fulfillment) and [I18n-node](https://github.com/mashpie/i18n-node)
+ 
+---
 
 ## References & Issues
 + Rocket Chat API [Documentation](https://rocket.chat/docs/developer-guides/rest-api/)
@@ -258,5 +270,8 @@ We have developed those base locales using a translation software and translatio
 + Actions on Google [Codelabs](https://codelabs.developers.google.com/?cat=Assistant)
 + [Webhook Boilerplate Template](https://github.com/actions-on-google/dialogflow-webhook-boilerplate-nodejs) for Actions on Google
 
-## Make Contributions
-Keep an eye on our issues. We are just beginning and will surely appreciate all the help we can get. All ideas are welcome. 
+---
+
+## Our Alexa Skill
+
+Are you an Alexa Developer, We also have an [Alexa Repository](https://github.com/RocketChat/alexa-rocketchat) for you to contribute on. Any form of help is appreciated.
