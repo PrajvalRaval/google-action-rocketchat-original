@@ -2,15 +2,22 @@
 * [Channel Utterances](#channel)
     * [Create A New Channel](#create-a-new-channel)
     * [Delete A Channel](#delete-a-channel)
+    * [Rename Channel](#rename-channel)
     * [Add All Users To A Channel](#add-all-users-on-server-to-a-channel)
     * [Make Channel Moderator](#make-an-user-channel-moderator)
+    * [Remove Channel Moderator](#remove-channel-moderator)
     * [Make Channel Owner](#make-an-user-channel-owner)
+    * [Remove Channel Owner](#remove-channel-owner)
+    * [Make Channel Leader](#make-channel-leader)
+    * [Remove Channel Leader](#remove-channel-leader)
     * [Archive A Channel](#archive-a-channel)
+    * [Unarchive A Channel](#unarchive-a-channel)
     * [Invite User To A Channel](#invite-user-to-a-channel)
     * [Leave A Channel](#leave-a-channel)
     * [Kick User From A Channel](#kick-user-from-a-channel)
-    * [Make Channel Leader](#make-channel-leader)
-    * [Rename Channel](#rename-channel)
+    * [Set Channel Topic](#set-channel-topic)
+    * [Set Channel Description](#set-channel-description)
+    * [Set Channel Announcement](#set-channel-announcement)
 * [Chat Utterances](#chat)
     * [Post A Message](#post-a-message)
     * [Post Emoji Message](#post-emoji-message)
@@ -101,6 +108,26 @@ Portuguese
 Ok Google, Fazer USERNAME Moderador De CHANNELNAME
 ```
 
+### Remove Channel Moderator
+
+English
+
+```
+Ok Google, Remove USERNAME As Moderator Of CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME के मॉडरेटर के पद से निकालें
+```
+
+Portuguese
+
+```
+Ok Google, Remover USERNAME Como Moderador De CHANNELNAME
+```
+
 ### Make An User Channel Owner
 
 English
@@ -121,6 +148,26 @@ Portuguese
 Ok Google, Fazer USERNAME dono de CHANNELNAME
 ```
 
+### Remove Channel Owner
+
+English
+
+```
+Ok Google, Remove USERNAME As Owner Of CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME के  मालिक के पद से निकालें
+```
+
+Portuguese
+
+```
+Ok Google, Remover USERNAME Como Proprietário De CHANNELNAME
+```
+
 ### Archive A Channel
 
 English
@@ -139,6 +186,26 @@ Portuguese
 
 ```
 Ok Google, Arquivar CHANNELNAME
+```
+
+### Unarchive A Channel
+
+English
+
+```
+Ok Google, Unarchive CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, अनारक्षित CHANNELNAME
+```
+
+Portuguese
+
+```
+Ok Google, Desarquivar CHANNELNAME
 ```
 
 ### Invite User To A Channel
@@ -221,6 +288,26 @@ Portuguese
 Ok Google, Tornar O Líder De USERNAME De CHANNELNAME
 ```
 
+### Remove Channel Leader
+
+English
+
+```
+Ok Google, Remove USERNAME As Leader Of CHANNELNAME
+```
+
+Hindi
+
+```
+Ok Google, USERNAME को CHANNELNAME के  नेता के पद से निकालें
+```
+
+Portuguese
+
+```
+Ok Google, Remover USERNAME Como Líder De CHANNELNAME
+```
+
 ### Rename Channel
 
 English
@@ -239,6 +326,66 @@ Portuguese
 
 ```
 Ok Google, Renomear CHANNELNAME Para NEWNAME
+```
+
+### Set Channel Topic
+
+English
+
+```
+Ok Google, Set CHANNELNAME Topic To TOPICMESSAGE
+```
+
+Hindi
+
+```
+Ok Google, TOPICMESSAGE के विषय को CHANNELNAME पर सेट करें
+```
+
+Portuguese
+
+```
+Ok Google, Definir O Tópico CHANNELNAME Para TOPICMESSAGE
+```
+
+### Set Channel Description
+
+English
+
+```
+Ok Google, Set CHANNELNAME Description To DESCRIPTIONMESSAGE
+```
+
+Hindi
+
+```
+Ok Google, CHANNELNAME के लिए DESCRIPTIONMESSAGE विवरण सेट करें
+```
+
+Portuguese
+
+```
+Ok Google, Defina A Descrição De CHANNELNAME Para DESCRIPTIONMESSAGE
+```
+
+### Set Channel Announcement
+
+English
+
+```
+Ok Google, Set CHANNELNAME Announcement To ANNOUNCEMENTMESSAGE
+```
+
+Hindi
+
+```
+Ok Google, CHANNELNAME के लिए ANNOUNCEMENTMSG घोषणा सेट करें
+```
+
+Portuguese
+
+```
+Ok Google, Definir O Anúncio De CHANNELNAME Para ANNOUNCMEANTMESSAGE
 ```
 ***
 
