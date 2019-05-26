@@ -82,5 +82,40 @@
         "SUCCESS": "%s is now renamed to %s.",
         "ERROR": "Sorry, I couldn't rename this channel right now.",
         "ERROR_NOT_FOUND": "Sorry, I couldn't rename channel %s right now."
+    },
+    "UNARCHIVE_CHANNEL": {
+        "SUCCESS": "%s is now unarchived.",
+        "ERROR": "Sorry, I couldn't unarchive this channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't unarchive channel %s right now."
+    },
+    "CHANNEL_TOPIC": {
+        "SUCCESS": "%s topic is now changed to %s",
+        "ERROR": "Sorry, I couldn't change this channel topic right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't change topic for channel %s right now."
+    },
+    "CHANNEL_DESCRIPTION": {
+        "SUCCESS": "%s description is now changed to %s",
+        "ERROR": "Sorry, I couldn't change this channel description right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't change description for channel %s right now."
+    },
+    "CHANNEL_ANNOUNCEMENT": {
+        "SUCCESS": "%s announcement is now changed to %s",
+        "ERROR": "Sorry, I couldn't change this channel announcement right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't change announcement for channel %s right now."
+    },
+    "REMOVE_LEADER": {
+        "SUCCESS": "%s is no longer the leader of %s.",
+        "ERROR": "Sorry, I couldn't remove leader from this channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't remove leader from channel %s right now."
+    },
+    "REMOVE_MODERATOR": {
+        "SUCCESS": "%s is no longer the moderator of %s.",
+        "ERROR": "Sorry, I couldn't remove moderator from this channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't remove moderator from channel %s right now."
+    },
+    "REMOVE_OWNER": {
+        "SUCCESS": "%s is no longer the owner of %s.",
+        "ERROR": "Sorry, I couldn't remove owner from this channel right now.",
+        "ERROR_NOT_FOUND": "Sorry, I couldn't remove owner from channel %s right now."
     }
   }

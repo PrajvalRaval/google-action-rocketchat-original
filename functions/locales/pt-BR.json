@@ -82,5 +82,40 @@
         "SUCCESS": "%s agora é renomeado para %s.",
         "ERROR": "Desculpe, não consegui renomear este canal agora.",
         "ERROR_NOT_FOUND": "Desculpe, não foi possível renomear o canal %s agora."
+    },
+    "UNARCHIVE_CHANNEL": {
+        "SUCCESS": "%s agora está desarquivado.",
+        "ERROR": "Desculpe, não consegui desarquivar este canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não consegui desarquivar o canal %s agora."
+    },
+    "CHANNEL_TOPIC": {
+        "SUCCESS": "%s tópico alterado para %s",
+        "ERROR": "Desculpe, não consegui alterar o tópico deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não consegui alterar o tópico do canal %s agora."
+    },
+    "CHANNEL_DESCRIPTION": {
+        "SUCCESS": "A descrição de %s agora é alterada para %s",
+        "ERROR": "Desculpe, não foi possível alterar a descrição deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não foi possível alterar a descrição do canal %s agora."
+    },
+    "CHANNEL_ANNOUNCEMENT": {
+        "SUCCESS": "A anúncio de %s agora é alterada para %s",
+        "ERROR": "Desculpe, não foi possível alterar a anúncio deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não foi possível alterar a anúncio do canal %s agora."
+    },
+    "REMOVE_LEADER": {
+        "SUCCESS": "%s não é mais o líder de %s.",
+        "ERROR": "Desculpe, não consegui remover o líder deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não consegui remover o líder do canal %s agora."
+    },
+    "REMOVE_MODERATOR": {
+        "SUCCESS": "%s não é mais o moderador de %s.",
+        "ERROR": "Desculpe, não consegui remover o moderador deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não consegui remover o moderador do canal %s agora."
+    },
+    "REMOVE_OWNER": {
+        "SUCCESS": "%s não é mais o proprietário de %s.",
+        "ERROR": "Desculpe, não consegui remover o proprietário deste canal agora.",
+        "ERROR_NOT_FOUND": "Desculpe, não consegui remover o proprietário do canal %s agora."
     }
   }
