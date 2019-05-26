@@ -26,4 +26,11 @@ module.exports = {
 	kickuserurl : `${ SERVER_URL }/api/v1/channels.kick`,
 	addleaderurl : `${ SERVER_URL }/api/v1/channels.addLeader`,
 	channelrenameurl : `${ SERVER_URL }/api/v1/channels.rename`,
+	unarchivechannelurl: `${ SERVER_URL }/api/v1/channels.unarchive`,
+	channeltopicurl: `${ SERVER_URL }/api/v1/channels.setTopic`,
+	channeldescriptionurl: `${ SERVER_URL }/api/v1/channels.setDescription`,
+	channelannouncementurl: `${ SERVER_URL }/api/v1/channels.setAnnouncement`,
+	removeleaderurl : `${ SERVER_URL }/api/v1/channels.removeLeader`,
+	removemoderatorurl : `${ SERVER_URL }/api/v1/channels.removeModerator`,
+	removeownerurl : `${ SERVER_URL }/api/v1/channels.removeOwner`,
 };

@@ -426,6 +426,166 @@ const channelRename = async (channelName, roomid, newName, headers) =>
 			return i18n.__('RENAME_ROOM.ERROR_NOT_FOUND',channelName);
 	});
 
+const unarchiveChannel = async (channelName, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.unarchivechannelurl,
+			{
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('UNARCHIVE_CHANNEL.SUCCESS',channelName);
+			} else {
+				return i18n.__('UNARCHIVE_CHANNEL.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('UNARCHIVE_CHANNEL.ERROR_NOT_FOUND',channelName);
+	});
+
+const channelTopic = async (channelName,roomid,topic,headers) =>
+	await axios
+		.post(
+			apiEndpoints.channeltopicurl,
+			{
+				roomId: roomid,
+				topic: topic,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('CHANNEL_TOPIC.SUCCESS', channelName, topic);
+			} else {
+				return i18n.__('CHANNEL_TOPIC.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('CHANNEL_TOPIC.ERROR_NOT_FOUND',channelName);
+	});
+
+const channelDescription = async (channelName,roomid,description,headers) =>
+	await axios
+		.post(
+			apiEndpoints.channeldescriptionurl,
+			{
+				roomId: roomid,
+				description: description,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('CHANNEL_DESCRIPTION.SUCCESS', channelName, description);
+			} else {
+				return i18n.__('CHANNEL_DESCRIPTION.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('CHANNEL_DESCRIPTION.ERROR_NOT_FOUND',channelName);
+	});
+
+const channelAnnouncement = async (channelName,roomid,announcement,headers) =>
+	await axios
+		.post(
+			apiEndpoints.channelannouncementurl,
+			{
+				roomId: roomid,
+				announcement: announcement,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('CHANNEL_ANNOUNCEMENT.SUCCESS', channelName, announcement);
+			} else {
+				return i18n.__('CHANNEL_ANNOUNCEMENT.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('CHANNEL_ANNOUNCEMENT.ERROR_NOT_FOUND',channelName);
+	});
+
+const removeLeader = async (userName, channelName, userid, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.removeleaderurl,
+			{
+				userId: userid,
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('REMOVE_LEADER.SUCCESS',userName, channelName);
+			} else {
+				return i18n.__('REMOVE_LEADER.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('REMOVE_LEADER.ERROR_NOT_FOUND',channelName);
+	});
+
+const removeModerator = async (userName, channelName, userid, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.removemoderatorurl,
+			{
+				userId: userid,
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('REMOVE_MODERATOR.SUCCESS',userName, channelName);
+			} else {
+				return i18n.__('REMOVE_MODERATOR.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('REMOVE_MODERATOR.ERROR_NOT_FOUND',channelName);
+	});
+
+const removeOwner = async (userName, channelName, userid, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.removeownerurl,
+			{
+				userId: userid,
+				roomId: roomid,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('REMOVE_OWNER.SUCCESS',userName, channelName);
+			} else {
+				return i18n.__('REMOVE_OWNER.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('REMOVE_OWNER.ERROR_NOT_FOUND',channelName);
+	});
+
 
 // Module Export of Functions
 
@@ -450,3 +610,10 @@ module.exports.leaveChannel = leaveChannel;
 module.exports.kickUser = kickUser;
 module.exports.addLeader = addLeader;
 module.exports.channelRename = channelRename;
+module.exports.unarchiveChannel = unarchiveChannel;
+module.exports.channelTopic = channelTopic;
+module.exports.channelDescription = channelDescription;
+module.exports.channelAnnouncement = channelAnnouncement;
+module.exports.removeLeader = removeLeader;
+module.exports.removeModerator = removeModerator;
+module.exports.removeOwner = removeOwner;

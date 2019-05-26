@@ -286,4 +286,124 @@ app.intent('Rename Channel Intent', async (conv, params) => {
 
 });
 
+app.intent('Unarchive Channel Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.unarchiveChannel(channelName,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Channel Topic Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  var topic = params.topic;
+  
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.channelTopic(channelName,roomid,topic,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Channel Description Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  var description = params.description;
+  
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.channelDescription(channelName,roomid,description,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Channel Announcement Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  var announcement = params.announcement;
+  
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.channelAnnouncement(channelName,roomid,announcement,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Remove Channel Leader Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
+  var userName = helperFunctions.replaceWhitespacesDots(userNameData);
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  
+  const headers = await helperFunctions.login(accessToken);
+  const userid = await helperFunctions.getUserId(userName, headers);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.removeLeader(userName,channelName,userid,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Remove Channel Moderator Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
+  var userName = helperFunctions.replaceWhitespacesDots(userNameData);
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  
+  const headers = await helperFunctions.login(accessToken);
+  const userid = await helperFunctions.getUserId(userName, headers);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.removeModerator(userName,channelName,userid,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Remove Channel Owner Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
+  var userName = helperFunctions.replaceWhitespacesDots(userNameData);
+  var channelNameRaw = params.channelname;
+  var channelNameData = channelNameRaw.toLowerCase();
+  var channelName = helperFunctions.replaceWhitespacesFunc(channelNameData);
+  
+  const headers = await helperFunctions.login(accessToken);
+  const userid = await helperFunctions.getUserId(userName, headers);
+  const roomid = await helperFunctions.getRoomId(channelName, headers);
+  const speechText = await helperFunctions.removeOwner(userName,channelName,userid,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
