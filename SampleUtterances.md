@@ -19,8 +19,8 @@
     * [Set Channel Description](#set-channel-description)
     * [Set Channel Announcement](#set-channel-announcement)
 * [Chat Utterances](#chat)
-    * [Post A Message](#post-a-message)
-    * [Post Emoji Message](#post-emoji-message)
+    * [Post Message In A Channel](#post-message-in-a-channel)
+    * [Post Emoji Message In A Channel](#post-emoji-message-in-a-channel)
     * [Read Last Message From A Channel](#read-last-message-from-a-channel)
     * [Read Unread Messages From A Channel](#read-unread-messages-from-a-channel)
 
@@ -391,7 +391,7 @@ Ok Google, Definir O Anúncio De CHANNELNAME Para ANNOUNCMEANTMESSAGE
 
 # Chat
 
-### Post A Message
+### Post Message In A Channel
 
 English
 
@@ -411,7 +411,7 @@ Portuguese
 Ok Google, Mandar MESSAGE Para O CHANNELNAME
 ```
 
-### Post Emoji Message
+### Post Emoji Message In A Channel
 
 English
 
@@ -473,6 +473,58 @@ Ok Google, Leia Minhas Mensagens Não Lidas De CHANNELNAME
 ***
 
 # IM
+
+### Send DM To An User
+
+English
+
+```
+Ok Google, DM MESSAGE Recipient USERNAME
+Ok Google, Direct Message MESSAGE Recipient USERNAME
+
+```
+
+Hindi
+
+```
+Ok Google, प्रत्यक्ष संदेश MESSAGE प्राप्तकर्ता USERNAME
+Ok Google, DM MESSAGE प्राप्तकर्ता USERNAME
+
+```
+
+Portuguese
+
+```
+Ok Google, Mensagem Direta MESSAGE Destinatário USERNAME
+Ok Google, DM MESSAGE Destinatário USERNAME
+
+```
+
+### Send DM With Emoji To An User
+
+English
+
+```
+Ok Google, Direct Message MESSAGE Emoji EMOJINAME Recipient USERNAME
+Ok Google, DM MESSAGE Emoji EMOJINAME Recipient USERNAME
+
+```
+
+Hindi
+
+```
+Ok Google, प्रत्यक्ष संदेश संदेश इमोजी EMOJINAME प्राप्तकर्ता USERNAME
+Ok Google, DM संदेश इमोजी EMOJINAME प्राप्तकर्ता USERNAME
+
+```
+
+Portuguese
+
+```
+Ok Google, Mensagem Direta MENSAGEM Emoji EMOJINAME Destinatário USERNAME
+Ok Google, DM MENSAGEM Emoji EMOJINAME Destinatário USERNAME
+
+```
 
 ***
 
