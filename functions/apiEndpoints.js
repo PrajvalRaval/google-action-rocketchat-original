@@ -33,4 +33,5 @@ module.exports = {
 	removeleaderurl : `${ SERVER_URL }/api/v1/channels.removeLeader`,
 	removemoderatorurl : `${ SERVER_URL }/api/v1/channels.removeModerator`,
 	removeownerurl : `${ SERVER_URL }/api/v1/channels.removeOwner`,
+	createimurl : `${ SERVER_URL }/api/v1/im.create`,
 };

@@ -406,4 +406,39 @@ app.intent('Remove Channel Owner Intent', async (conv, params) => {
 
 });
 
+app.intent('Post DM Message Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var message = params.message;
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
+  var userName = helperFunctions.replaceWhitespacesDots(userNameData);
+
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.createDMSession(userName, headers);
+  const speechText = await helperFunctions.postDirectMessage(message,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
+app.intent('Post DM Emoji Message Intent', async (conv, params) => {
+
+  var accessToken = conv.user.access.token;
+  var messageData = params.message;
+  const emojiData = params.emoji;
+  const emoji = helperFunctions.emojiTranslateFunc(emojiData);
+  var userNameRaw = params.username;
+  var userNameData = userNameRaw.toLowerCase();
+  var userName = helperFunctions.replaceWhitespacesDots(userNameData);
+  var message = messageData + emoji;
+
+  const headers = await helperFunctions.login(accessToken);
+  const roomid = await helperFunctions.createDMSession(userName, headers);
+  const speechText = await helperFunctions.postDirectMessage(message,roomid,headers);
+
+  conv.ask(speechText);
+
+});
+
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);

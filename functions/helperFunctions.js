@@ -586,6 +586,44 @@ const removeOwner = async (userName, channelName, userid, roomid, headers) =>
 			return i18n.__('REMOVE_OWNER.ERROR_NOT_FOUND',channelName);
 	});
 
+const createDMSession = async (userName, headers) =>
+	await axios
+		.post(
+			apiEndpoints.createimurl,
+			{
+				username: userName,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => `${ res.room._id }`)
+		.catch((err) => {
+			console.log(err.message);
+	});
+
+const postDirectMessage = async (message, roomid, headers) =>
+	await axios
+		.post(
+			apiEndpoints.postmessageurl,
+			{
+				roomId: roomid,
+				text: message,
+			},
+			{ headers }
+		)
+		.then((res) => res.data)
+		.then((res) => {
+			if (res.success === true) {
+				return i18n.__('POST_MESSAGE.SUCCESS');
+			} else {
+				return i18n.__('POST_MESSAGE.ERROR');
+			}
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return i18n.__('POST_MESSAGE.ERROR');
+		});
+
 
 // Module Export of Functions
 
@@ -617,3 +655,5 @@ module.exports.channelAnnouncement = channelAnnouncement;
 module.exports.removeLeader = removeLeader;
 module.exports.removeModerator = removeModerator;
 module.exports.removeOwner = removeOwner;
+module.exports.createDMSession = createDMSession;
+module.exports.postDirectMessage = postDirectMessage;
