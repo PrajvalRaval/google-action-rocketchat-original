@@ -484,7 +484,6 @@ English
 ```
 Ok Google, DM MESSAGE Recipient USERNAME
 Ok Google, Direct Message MESSAGE Recipient USERNAME
-
 ```
 
 Hindi
@@ -492,7 +491,6 @@ Hindi
 ```
 Ok Google, प्रत्यक्ष संदेश MESSAGE प्राप्तकर्ता USERNAME
 Ok Google, DM MESSAGE प्राप्तकर्ता USERNAME
-
 ```
 
 Portuguese
@@ -500,7 +498,6 @@ Portuguese
 ```
 Ok Google, Mensagem Direta MESSAGE Destinatário USERNAME
 Ok Google, DM MESSAGE Destinatário USERNAME
-
 ```
 
 ### Send DM With Emoji To An User
@@ -510,7 +507,6 @@ English
 ```
 Ok Google, Direct Message MESSAGE Emoji EMOJINAME Recipient USERNAME
 Ok Google, DM MESSAGE Emoji EMOJINAME Recipient USERNAME
-
 ```
 
 Hindi
@@ -518,7 +514,6 @@ Hindi
 ```
 Ok Google, प्रत्यक्ष संदेश संदेश इमोजी EMOJINAME प्राप्तकर्ता USERNAME
 Ok Google, DM संदेश इमोजी EMOJINAME प्राप्तकर्ता USERNAME
-
 ```
 
 Portuguese
@@ -526,7 +521,6 @@ Portuguese
 ```
 Ok Google, Mensagem Direta MENSAGEM Emoji EMOJINAME Destinatário USERNAME
 Ok Google, DM MENSAGEM Emoji EMOJINAME Destinatário USERNAME
-
 ```
 
 ***
