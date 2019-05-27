@@ -23,6 +23,9 @@
     * [Post Emoji Message In A Channel](#post-emoji-message-in-a-channel)
     * [Read Last Message From A Channel](#read-last-message-from-a-channel)
     * [Read Unread Messages From A Channel](#read-unread-messages-from-a-channel)
+* [IM Utterances](#im)
+   * [Send DM To An User](#send-dm-to-an-user)
+   * [Send DM With Emoji To An User](#send-dm-with-emoji-to-an-user)
 
 ***
 
