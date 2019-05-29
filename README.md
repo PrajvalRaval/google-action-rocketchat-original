@@ -101,7 +101,9 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
     
     In Order to deploy our **config** we need to set some temporary Firebase Environment Variables by running the following command:
     
-    `firebase functions:config:set envariables.server_url="temp_url" envariables.oauth_service_name="temp_oauth" envariables.clientid="temp_clientid"`
+    ```
+    firebase functions:config:set envariables.server_url="temp_url" envariables.oauth_service_name="temp_oauth" envariables.clientid="temp_clientid"
+    ```
     
     Then run,
 
