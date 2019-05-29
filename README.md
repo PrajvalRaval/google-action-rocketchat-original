@@ -67,7 +67,7 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 
       `firebase init`
 
-6. You'll be asked to select which Firebase CLI features you want to setup for your Actions project. Choose Functions then press Enter to confirm and continue.
+6. You'll be asked to select which Firebase CLI features you want to setup for your Actions project. Choose **Functions** then press Enter to confirm and continue.
 
 7. Associate the firebase tool with your Actions project by selecting it using the arrow keys to navigate the projects list.
 
@@ -98,6 +98,12 @@ This action uses Firebase Cloud Functions to make an HTTP request to a non-Googl
 14. Get the fulfillment dependencies and deploy the fulfillment function:
 
       `npm install`
+    
+    In Order to deploy our **config** we need to set some temporary Firebase Environment Variables by running the following command:
+    
+    `firebase functions:config:set envariables.server_url="temp_url" envariables.oauth_service_name="temp_oauth" envariables.clientid="temp_clientid"`
+    
+    Then run,
 
       `firebase deploy --only functions`
 
